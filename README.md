@@ -1,4 +1,4 @@
-<img src="Resources/Images/photo-1694903110330-cc64b7e1d21d.png" align="right"/>
+<img src="Resources/Images/joshua-sortino-LqKhnDzSF-8-unsplash.png" align="right"/>
 
 # `Columbia Engineering FinTech Bootcamp 2023-06 Cohort`
 
