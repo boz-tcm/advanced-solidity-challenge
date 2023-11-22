@@ -30,7 +30,7 @@
 - Google Chrome 119.0.6045.123 (Official Build) (arm64)
 - Pragma Solidity ^0.5.0 Code File (requires compiler 0.5.0 or greater and less than 0.6.0)
 - Solidity Code File Compiled Using Version 0.5.5+commit.47a71e8f
-- Ganache
+- Ganache Version 2.7.1
 - Metamask
 - OpenZeppelin Version 2.5.0
 - VS Code IDE 1.84.2
