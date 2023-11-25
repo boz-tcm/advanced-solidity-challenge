@@ -16,13 +16,13 @@ import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5
 
 contract KaseiCoin is ERC20, ERC20Detailed, ERC20Mintable { /* Inheriting classes for fungible ethereum token standard #20 via Open Zeppelin library implementations
                                                             of ERC20, ERC20Detailed, ERC20Mintable. */
-    address payable owner;    
+    // address payable owner;    
     
-    // Modifier block is already taken care of by introducing ERC20Mintable class inheritance above.  However, included for general implementation reference.
-    modifier onlyOwnerMintsPermission() { //Requires owner validation in order to execute minting function, c.f. https://www.geeksforgeeks.org/solidity-function-modifiers/
-        require(owner == msg.sender, "you are not allowed to mint!");
-        _; //If evaluates to True and wildcard '_' placed at end of modifier, as here, will allow function where modifier invoked, to execute, otherwise, will preempt function execution.
-    }
+    // // Modifier block is already taken care of by introducing ERC20Mintable class inheritance above.  However, included for general implementation reference.
+    // modifier onlyOwnerMintsPermission() { //Requires owner validation in order to execute minting function, c.f. https://www.geeksforgeeks.org/solidity-function-modifiers/
+    //     require(owner == msg.sender, "you are not allowed to mint!");
+    //     _; //If evaluates to True and wildcard '_' placed at end of modifier, as here, will allow function where modifier invoked, to execute, otherwise, will preempt function execution.
+    // }
     /* Within the KaseiCoin contract, creating a constructor with the following parameters: name, symbol, and initial_supply.
     As part of the constructor definition, adding a call to the constructor of the ERC20Detailed contract, passing the name,
     symbol, and 18 parameters. (Note: 18 is the value for the decimal parameter: "Tokens usually opt for a value of 18, imitating
@@ -38,9 +38,9 @@ contract KaseiCoin is ERC20, ERC20Detailed, ERC20Mintable { /* Inheriting classe
      * these values are immutable: they can only be set once during
      * construction. */
     
-    constructor(string memory name, string memory symbol, uint8 initial_supply) ERC20Detailed(name, symbol, 18) public {
-        owner = msg.sender;
-        mint(owner, initial_supply); /* Inheriting the 'mint' function from ERC20Mintable, which in turns inherits the more generic and
+    constructor(string memory name, string memory symbol, uint initial_supply) ERC20Detailed(name, symbol, 18) public {
+        // owner = msg.sender;
+        /* mint(owner, initial_supply); /* Inheriting the 'mint' function from ERC20Mintable, which in turns inherits the more generic,
         minting mechanism-agnostic '_mint' function from ERC20, c.f. ERC20 code file comments */
     }
 }
