@@ -29,16 +29,16 @@ contract KaseiCoinCrowdsaleDeployer {
     address public kasei_crowdsale_address;
 
     // Add the constructor.
-    constructor(string memory name, string memory symbol, address payable wallet, uint initial_supply, uint rate) public {
+    constructor(string memory name, string memory symbol, address payable wallet) public {
         // Instantiate a KaseiCoin token.  Creating a new instance of the KaseiCoin token.
-        initial_supply = 0; // Initialize token supply variable
+        uint initial_supply = 0; // Initialize token supply variable
         KaseiCoin token = new KaseiCoin(name, symbol, initial_supply); // Address attribute included in this contract instance, will be referenced below.
 
         // Assign the KaseiCoin token's contract address to the `kasei_token_address` variable.
         kasei_token_address = address(token);
 
         // Instantiate a KaseiCoin crowdsale.  Creating a new instance of the KaseiCoin crowdsale.  Wallet address will be provided by end-user. Token will pass from token instance above.
-        rate = 1; // Initialize token offer rate variable as 1:1 (token:ether)
+        uint rate = 1; // Initialize token offer rate variable as 1:1 (token:ether)
         KaseiCoinCrowdsale kasei_coin_crowdsale = new KaseiCoinCrowdsale(rate, wallet, token); // Adddress attribute included in this contract instance.
 
         // Aassign the `KaseiCoinCrowdsale` contract’s address to the `kasei_crowdsale_address` variable.
